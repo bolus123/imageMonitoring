@@ -1,14 +1,13 @@
-download.file("https://www.ua.edu/assets/img/ua-square-logo-100x100.png",
-  destfile = "UA.png")
-  
-  
-install.packages('png')
-install.packages('colorspace')
+#install.packages('png')
+#install.packages('colorspace')
+#install.packages('RCurl')
 library("png")
 library("colorspace")
+library("RCurl")
 
+targetURL <- 'https://www.ua.edu/assets/img/ua-square-logo-100x100.png'
 
-x <- readPNG('UA.png')
+x <- readPNG(getURLContent(targetURL))
 dim(x)
 
 y <- rgb(x[,,1], x[,,2], x[,,3], alpha = x[,,4])
