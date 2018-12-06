@@ -14,7 +14,7 @@ dim(x)
 y <- rgb(x[,,1], x[,,2], x[,,3], alpha = x[,,4])
 yg <- desaturate(y)
 yn <- col2rgb(yg)[1, ]/255
-dim(y) <- dim(yg) <- dim(yn) <- dim(x)[1:2
+dim(y) <- dim(yg) <- dim(yn) <- dim(x)[1:2]
 
 
 pixmatplot <- function (x, ...) {
